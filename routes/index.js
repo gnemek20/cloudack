@@ -7,8 +7,8 @@ router.get('/', function(req, res, next) {
 });
 
 /* GET Methods */
-router.get('/cwd', (req, res) => {
-  res.send(process.cwd());
+router.get('/dummy', (req, res) => {
+  res.send('I\'m dummy :)');
 });
 
 router.get('/image', (req, res) => {
