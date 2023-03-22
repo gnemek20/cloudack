@@ -34,12 +34,16 @@ drive.files.list({ q: 'mimeType="image/png"' }).then((res) => {
   // console.log(res.data.files)
 })
 
-drive.files.list().then((res) => {
-  console.log(res.data.files)
+// drive.files.list().then((res) => {
+//   console.log(res.data.files)
 
-  // for (let i = 0; i < res.data.files.length; i++) {
-  //   drive.files.delete({ fileId: res.data.files[i].id })
-  // }
+//   // for (let i = 0; i < res.data.files.length; i++) {
+//   //   drive.files.delete({ fileId: res.data.files[i].id })
+//   // }
+// })
+
+drive.files.list({ q: '"1ivi8DL0sP1woBGTJAa18L1voCwtKI6YL" in parents' }).then((res) => {
+  console.log(res.data)
 })
 
 // drive.files.create({
