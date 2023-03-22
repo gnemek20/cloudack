@@ -18,7 +18,6 @@ const auth = new google.auth.GoogleAuth({
 
 const drive = google.drive({ version: 'v3', auth });
 
-let array = new Array();
 drive.files.list({ q: 'mimeType="image/png"' }).then((res) => {
   // 특정 이미지 가져오는 법
   // for (let i = 0; i < res.data.files.length; i++) {
@@ -32,8 +31,25 @@ drive.files.list({ q: 'mimeType="image/png"' }).then((res) => {
   //   drive.files.delete({ fileId: res.data.files[i].id })
   // }
 
-  console.log(res.data.files)
+  // console.log(res.data.files)
 })
+
+drive.files.list().then((res) => {
+  console.log(res.data.files)
+
+  // for (let i = 0; i < res.data.files.length; i++) {
+  //   drive.files.delete({ fileId: res.data.files[i].id })
+  // }
+})
+
+// drive.files.create({
+//   requestBody: {
+//     name: 'dummy',
+//     mimeType: 'application/vnd.google-apps.folder',
+//     parents: ['1AuKfzwK9NPsobpXlR9a6i5a29i9rr2qX']
+//   },
+//   fields: 'id'
+// })
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
